@@ -1,7 +1,11 @@
 // $color-primary: #f59a83;
-$color-primary: #f38e82;
+$color-primary: #4f8cff; // Vibrant blue
 $color-grad-1: #5f5050;
 $color-grad-2: #4d4545;
+$color-accent: #00c9a7; // Teal accent
+$color-bg-dark: #1a2238; // Deep blue background
+$color-bg-light: #f5f6fa; // Light background for cards
+$color-card-shadow: rgba(44, 62, 80, 0.08);
 
 $color-grey-light-1: #dbd6d6; // Light background
 $color-grey-light-2: #f2efee; // Light lines
@@ -9,7 +13,7 @@ $color-grey-light-3: #d3c7c3; // Light text (placeholder)
 $color-grey-dark-1: #615551; // Normal text
 $color-grey-dark-2: #918581; // Lighter text
 
-$gradient: linear-gradient(to right bottom, $color-grad-1, $color-grad-2);
+$gradient: linear-gradient(135deg, #1a2238 0%, #4f8cff 100%);
 
 $bp-large: 78.15em; // 1250px
 $bp-medium: 61.25em; // 980px
@@ -40,11 +44,102 @@ body {
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 400;
   line-height: 1.6;
-  color: $color-grey-dark-1;
-  background-image: $gradient;
+  color: #222;
+  background: $gradient;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: calc(100vh - 2 * 4vw);
+  min-height: 100vh;
+}
+
+.app-bg {
+  min-height: 100vh;
+  width: 100vw;
+  background: $gradient;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container--centered {
+  max-width: 1400px;
+  width: 100%;
+  margin: 4vw auto;
+  background: transparent;
+  border-radius: 18px;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+
+.main-content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.1fr 2.2fr;
+  gap: 3rem;
+  margin-top: 2.5rem;
+  align-items: stretch;
+
+  @media only screen and (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+  }
+}
+
+.card {
+  background: $color-bg-light;
+  border-radius: 32px;
+  box-shadow: 0 8px 32px 0 $color-card-shadow;
+  padding: 4rem 2.5rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  min-width: 0;
+  min-height: 420px;
+  font-size: 2.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media only screen and (max-width: 900px) {
+    width: 100%;
+    padding: 3rem 1.5rem;
+    font-size: 1.7rem;
+    min-height: 260px;
+  }
+}
+
+.logo-container--centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header__logo--circle {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  box-shadow: 0 2px 12px 0 $color-card-shadow;
+}
+
+.logo-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: $color-primary;
+  letter-spacing: 0.05em;
+  margin-top: 0.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: $color-primary;
 }
 
 .container {

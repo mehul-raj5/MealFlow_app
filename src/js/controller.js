@@ -117,6 +117,11 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
+// Home button handler: clears results, pagination, and recipe
+const controlHome = function () {
+  window.location.href = 'http://localhost:1234/';
+};
+
 // Runs at first so that the publisher notify the subscribersw
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);
@@ -128,5 +133,7 @@ const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
+  // Home button event
+  document.querySelector('.nav__btn--home').addEventListener('click', controlHome);
 };
 init();

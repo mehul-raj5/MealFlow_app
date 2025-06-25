@@ -23,16 +23,31 @@
 }
 
 .btn {
-  @extend %btn;
-
+  border-radius: 12px;
+  background: $color-primary;
+  color: #fff;
   padding: 1.5rem 4rem;
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  box-shadow: 0 2px 8px 0 $color-card-shadow;
+  transition: background 0.2s, transform 0.2s;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  &:hover, &:focus {
+    background: $color-accent;
+    transform: translateY(-2px) scale(1.04);
+    outline: none;
+  }
 
   svg {
     height: 2.25rem;
     width: 2.25rem;
-    fill: currentColor;
+    fill: #fff;
   }
 }
 
@@ -55,60 +70,34 @@
   }
 }
 
-.btn--inline {
-  color: $color-primary;
-  font-size: 1.3rem;
-  font-weight: 600;
-  border: none;
-  background-color: $color-grey-light-1;
-  padding: 0.8rem 1.2rem;
+.btn--inline,
+.pagination__btn {
+  padding: 0.7rem 2rem;
+  font-size: 1.4rem;
   border-radius: 10rem;
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  transition: all 0.2s;
-
+  max-width: 220px;
+  min-width: 0;
   svg {
-    height: 1.6rem;
-    width: 1.6rem;
-    fill: currentColor;
-    margin: 0 0.2rem;
-  }
-
-  span {
-    margin: 0 0.4rem;
-  }
-
-  &:hover {
-    color: $color-grad-2;
-    background-color: $color-grey-light-2;
-  }
-
-  &:focus {
-    outline: none;
+    height: 2rem;
+    width: 2rem;
   }
 }
 
 .btn--round {
-  background-image: $gradient;
+  background: $color-accent;
   border-radius: 50%;
   border: none;
   cursor: pointer;
   height: 4.5rem;
   width: 4.5rem;
-  // margin-left: auto;
-  transition: all 0.2s;
-
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.2s, transform 0.2s;
 
-  &:hover {
+  &:hover, &:focus {
+    background: $color-primary;
     transform: scale(1.07);
-  }
-
-  &:focus {
     outline: none;
   }
 
@@ -120,46 +109,41 @@
 }
 
 .btn--tiny {
-  height: 2rem;
-  width: 2rem;
+  height: 2.5rem;
+  width: 2.5rem;
   border: none;
-  background: none;
+  background: $color-bg-light;
+  color: $color-primary;
+  border-radius: 50%;
   cursor: pointer;
+  transition: background 0.2s, color 0.2s;
 
   svg {
     height: 100%;
     width: 100%;
     fill: $color-primary;
-    transition: all 0.3s;
+    transition: fill 0.3s;
   }
 
-  &:focus {
+  &:hover, &:focus {
+    background: $color-primary;
+    color: #fff;
     outline: none;
   }
 
-  &:hover svg {
-    fill: $color-grad-2;
-    transform: translateY(-1px);
-  }
-
-  &:active svg {
-    fill: $color-grad-2;
-    transform: translateY(0);
-  }
-
-  &:not(:last-child) {
-    margin-right: 0.3rem;
+  &:hover svg, &:focus svg {
+    fill: #fff;
   }
 }
 
 .heading--2 {
-  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;
   font-weight: 700;
   color: $color-primary;
   text-transform: uppercase;
   margin-bottom: 2.5rem;
   text-align: center;
-  // transform: skewY(-3deg);
 }
 
 .link:link,
