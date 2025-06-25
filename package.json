@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mehul-raj5/recipe_app"
+    "url": "git+https://github.com/mehul-raj5/MealFlow_app"
   },
   "author": "Mehul Raj",
   "license": "ISC",
   "bugs": {
-    "url": "mehul-raj5/recipe_app"
+    "url": "https://github.com/mehul-raj5/MealFlow_app/issues"
   },
-  "homepage": "https://github.com/mehul-raj5/recipe_app",
+  "homepage": "https://github.com/mehul-raj5/MealFlow_app",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.2",
     "parcel": "^2.8.2",
